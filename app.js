@@ -1,5 +1,5 @@
 import express from "express";
-import db from "./db.js";
+import {db, Playlist, Song} from "./models/index.js"
 
 const PORT = 8000;
 const app = express();
