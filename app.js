@@ -1,5 +1,6 @@
 import express from "express";
 import cors from 'cors';
+console.log(process.env.DATABASE_URL)
 import playlistRouter from "./routers/playlist_api.js";
 import {db, Playlist, Song} from "./models/index.js"
 
