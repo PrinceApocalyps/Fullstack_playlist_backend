@@ -1,12 +1,15 @@
 import express from "express";
+import cors from 'cors';
 import playlistRouter from "./routers/playlist_api.js";
 import {db, Playlist, Song} from "./models/index.js"
+
 
 const PORT = 8000;
 const app = express();
 
 //Middleware
 app.use(express.json());
+app.use(cors());
 app.use((err, req, res, next) => {
     if (err.type === "entity.parse.failed") {
         return res.status(400).json({ error: "Invalid JSON in request body" });
